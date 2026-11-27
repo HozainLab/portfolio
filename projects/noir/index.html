@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOIR — каталог</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="search.js" defer></script>
+  <script src="catalog.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><a href="./index.html" class="brand">NOIR</a><span>ДЕМО КАТАЛОГА</span></header>
+    <h1>Афиша</h1>
+    <div class="controls">
+      <label>Название, режиссёр или актёр<input type="search" id="query" placeholder="Например, «Спектр»"></label>
+      <label>Жанр<select id="genre"><option value="">Все жанры</option><option>Драма</option><option>Фантастика</option><option>Триллер</option></select></label>
+    </div>
+    <p id="count" role="status"></p>
+    <ul id="films" class="grid"></ul>
+  </main>
+</body>
+</html>

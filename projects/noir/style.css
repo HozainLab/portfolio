@@ -1,0 +1,28 @@
+:root {
+  color-scheme: dark;
+  font: 16px/1.5 system-ui, sans-serif;
+  color: #f4e8de;
+  background: #181014;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1200px; margin: auto; padding: 24px clamp(20px, 5vw, 70px) 60px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 24px; border-bottom: 1px solid #654451; }
+.brand { color: inherit; text-decoration: none; font: 700 25px Georgia, serif; letter-spacing: .28em; }
+header span, #count { color: #d9afba; font-size: .875rem; }
+h1 { font: 400 clamp(3.25rem, 7vw, 6rem)/1 Georgia, serif; margin: .53em 0 .34em; }
+.controls { display: flex; gap: 14px; flex-wrap: wrap; }
+label { display: grid; gap: 5px; color: #eccbd3; }
+label:first-child { flex: 1 1 300px; }
+input, select { padding: 12px; min-width: 0; min-height: 45px; color: inherit; font: inherit; background: #2b1c25; border: 1px solid #80576a; border-radius: 5px; }
+.grid { padding: 0; list-style: none; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 195px), 1fr)); }
+.grid li { min-width: 0; }
+.cover { aspect-ratio: 5/6; border-radius: 5px; border: 1px solid #875e6c; background: radial-gradient(ellipse at 54% 38%, var(--light) 0 4%, transparent 29%), repeating-linear-gradient(154deg, transparent 0 35px, #22132245 35px 37px), linear-gradient(156deg, var(--dark), #1c141d); }
+.violet { --light: #c478bc; --dark: #6e3a75; }
+.red { --light: #f18a75; --dark: #813a40; }
+.amber { --light: #f9b777; --dark: #6f4d36; }
+.blue { --light: #85b8c9; --dark: #345d72; }
+h2 { font: 400 1.5rem Georgia, serif; margin-bottom: .25em; }
+p { color: #d5bac1; margin: .25em 0; }
+#count { margin: 1.2em 0; }
