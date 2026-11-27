@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101e31"><title>Морской бой — игровой планшет</title><meta name="description" content="Два поля для морского боя: расстановка кораблей и ручной журнал выстрелов."><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-icon">⚓</span> МОРСКОЙ БОЙ</a><span class="top-note"><i></i> ИГРОВОЙ ПЛАНШЕТ</span><button class="text-btn" id="rules">Как играть <span>↗</span></button></header>
+<main>
+<section class="intro"><div><div class="eyebrow">ВАША ТАКТИКА. ВАШ ФЛОТ.</div><h1>Курс на победу<span>.</span></h1><p>Расставьте корабли. Договоритесь о первом ходе. Огонь!</p></div><div class="save-state" id="saveState"><span>✓</span> Прогресс сохраняется<br><small>на этом устройстве</small></div></section>
+<div class="boards">
+<section class="panel own-panel" aria-labelledby="ownTitle">
+<div class="panel-head"><div class="heading"><span class="panel-number">01</span><div><h2 id="ownTitle">Мой флот</h2><p>Ваша акватория</p></div></div><span class="badge" id="fleetBadge">Расстановка</span></div>
+<div class="fleet" id="fleet" aria-label="Выбор корабля"></div>
+<div class="toolbar"><button class="tool orientation" id="rotate" title="Сменить ориентацию (R)">↔ <span>Горизонтально</span></button><button class="tool" id="remove" aria-pressed="false">⌫ <span>Удалить</span></button><span class="key-hint">R — поворот</span></div>
+<div class="board-wrap"><div class="board" id="ownBoard" role="group" aria-label="Моя доска 10 на 10"></div></div>
+<div class="board-caption"><span class="legend"><i class="ship-dot"></i> Ваш корабль</span><span id="fleetCount">0 из 10 кораблей</span></div>
+<div class="panel-bottom"><button class="secondary" id="random">⤨ <span>Расставить случайно</span></button><button class="reset" id="resetFleet">Сбросить флот</button></div>
+<div class="hint" id="ownHint" role="status">Выберите корабль и нажмите на клетку поля.</div>
+</section>
+<section class="panel enemy-panel" aria-labelledby="enemyTitle">
+<div class="panel-head"><div class="heading"><span class="panel-number coral">02</span><div><h2 id="enemyTitle">Поле соперника</h2><p>Карта ваших выстрелов</p></div></div><span class="badge enemy-badge">Разведка</span></div>
+<div class="shot-tools" id="shotTools" aria-label="Тип отметки"><button class="shot-tool active" data-mode="miss" aria-pressed="true"><span class="miss-icon">•</span> Мимо</button><button class="shot-tool" data-mode="hit" aria-pressed="false"><span class="hit-icon">×</span> Попал</button><button class="shot-tool" data-mode="erase" aria-pressed="false"><span>⌫</span> Ластик</button></div>
+<div class="enemy-instruction" id="enemyInstruction">Нажмите на клетку, чтобы отметить промах.</div>
+<div class="board-wrap"><div class="board enemy" id="enemyBoard" role="group" aria-label="Доска соперника 10 на 10"></div></div>
+<div class="board-caption"><span class="legend"><i class="miss-dot"></i> Мимо <i class="hit-dot"></i> Попал</span><span>Ручные отметки</span></div>
+<div class="shot-stats"><div><strong id="shotsCount">0</strong><span>ВЫСТРЕЛОВ</span></div><div><strong class="coral-text" id="hitsCount">0</strong><span>ПОПАДАНИЙ</span></div><div><strong id="accuracy">—</strong><span>ТОЧНОСТЬ</span></div><button class="reset" id="resetShots">Сбросить<br>отметки</button></div>
+<div class="hint" id="enemyHint" role="status">Ошиблись? Выберите другую отметку или ластик.</div>
+</section>
+</div>
+<footer><span class="footer-anchor">⚓</span><p>Классический флот <b>10 кораблей · 20 палуб</b></p><span class="footer-rule">Корабли не должны касаться друг друга, даже по диагонали.</span></footer>
+</main>
+<dialog id="modal"><button class="close" aria-label="Закрыть">×</button><h2 id="modalTitle"></h2><div id="modalBody"></div><div class="dialog-actions"><button class="secondary" id="cancel">Отмена</button><button class="primary" id="confirm">Понятно</button></div></dialog>
+<script src="app.js"></script></body></html>
